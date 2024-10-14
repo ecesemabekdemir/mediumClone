@@ -13,17 +13,22 @@ export default async function MainHeader() {
 
   return (
     <header>
-      <div className="logo">
-        <h1>Medium</h1>
+      <div className="left-header">
+        <div className="logo">
+          <h1>Medium</h1>
+        </div>
+        <div className="search">
+          <input type="text" placeholder="Search" />
+        </div>
       </div>
-      <div className="search">
-        <input type="text" placeholder="Search" />
-      </div>
-      <div className="write">
-        <Link href={"/new-post"}>Write</Link>
-      </div>
-      <div className="profile">
-        <HeaderProfile />
+      <div className="right-header">
+        <div className="write">
+          <Link href={"/new-post"}>Write</Link>
+        </div>
+        <div className="notifications">#</div>
+        <div className="profile">
+          <HeaderProfile />
+        </div>
       </div>
     </header>
   );
