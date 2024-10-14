@@ -1,0 +1,38 @@
+.login-form {
+  max-width: 800px;
+  margin: 200px auto;
+
+
+  form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+      border: 0.5px solid #f9f9f9;
+      border-radius: 18px;
+      padding: 15px;
+    }
+
+    button {
+      padding: 10px;
+      border: .5px solid #f9f9f9;
+      border-radius: 18px;
+    }
+
+    .btn {
+      border: none;
+      background:none;
+      color: green;
+      font-weight: bold;
+    }
+
+    .signup {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  
+}
