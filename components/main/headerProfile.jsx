@@ -11,7 +11,7 @@ export default async function HeaderProfile() {
   console.log(user);
 
   return (
-    <div>
+    <div className="headerProfile">
       {user ? (
         <ul>
           <li>Hoşgeldin , {user.email}</li>
