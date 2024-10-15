@@ -1,12 +1,12 @@
 import { SavePost } from "./action";
-
+import "./newpost.css";
 export default function NewPost() {
   return (
-    <div>
+    <div className="nevpost">
       <form action={SavePost}>
-        <input type="text" name="title" placeholder="yazı başlığı" />
+        <input type="text" name="title" placeholder="title" />
         <br />
-        <textarea name="content" placeholder="yazı içeriği" />
+        <textarea name="content" placeholder="Tell your story..." />
         <br />
         <button> yazıyı paylas</button>
       </form>

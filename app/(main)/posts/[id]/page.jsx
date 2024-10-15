@@ -14,6 +14,7 @@ export default async function PostDetailPage({ params }) {
   return (
     <div>
       <h1>{data.title}</h1>
+      <h2>{data.content}</h2>
     </div>
   );
 }
