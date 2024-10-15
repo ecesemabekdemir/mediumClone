@@ -43,4 +43,10 @@ header {
   li {
     list-style: none;
   }
+
+  .profileBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 }

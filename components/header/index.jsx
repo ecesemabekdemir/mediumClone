@@ -1,4 +1,3 @@
-import { signOut } from "@/app/login/action";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import "./header.css";

@@ -10,11 +10,15 @@ export default async function PostDetailPage({ params }) {
     .single();
 
   if (!data) return notFound();
+  console.log(data);
 
   return (
     <div>
-      <h1>{data.title}</h1>
-      <h2>{data.content}</h2>
+      <div className="post">
+        <h1>{data.title}</h1>
+        <h2>{data.content}</h2>
+      </div>
+      <div className="comments"></div>
     </div>
   );
 }

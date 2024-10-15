@@ -5,6 +5,9 @@ export default function LoginPage() {
   return (
     <div className="login-form">
       <h1>Join Medium.</h1>
+      <div className="img">
+        <img src={"/img/login.png"} alt="" />
+      </div>
       <form action="">
         <input type="email" name="email" placeholder="mail adresi gir" />
         <input type="password" name="password" placeholder="********" />
