@@ -1,7 +1,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -25,7 +27,11 @@ body {
 /*
   5. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -33,21 +39,31 @@ img, picture, video, canvas, svg {
 /*
   6. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /*
   7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 /*
   8. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -57,29 +73,56 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .post {
+  max-width: 800px;
   padding: 20px;
-  background-color: #f5f5f5;
   border-radius: 8px;
   margin: 20px auto;
-  max-width: 800px;
-  border-bottom: 1px solid gray;
 
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .userInfo {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e1dddd;
+
+    .followBtn {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #156d12;
+      font-weight: bold;
+    }
+
+    .info {
+      p {
+        color: #6b6b6b;
+        margin-bottom: 20px;
+      }
+      span {
+        color: #242424;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .comments {
+    border-bottom: 1px solid #e1dddd;
+    input {
+      margin-bottom: 25px;
+    }
+  }
 }
 
-.post h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.post h2 {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-
-.postList  {
+.postList {
   width: 700px;
   margin: 0 auto;
 
@@ -92,10 +135,6 @@ p, h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
   }
 }
-
-
-
-
 
 .postList h1 {
   font-size: 1.8rem;

@@ -8,7 +8,7 @@ export default function NewPost() {
         <br />
         <textarea name="content" placeholder="Tell your story..." />
         <br />
-        <button> yazıyı paylas</button>
+        <button className="publishBtn">Publish</button>
       </form>
     </div>
   );

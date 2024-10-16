@@ -16,11 +16,24 @@ export default async function PostDetailPage({ params }) {
   return (
     <div>
       <div className="post">
+        <p>Member-only story</p>
         <h1>{data.title}</h1>
+        <div className="userInfo">
+          <div className="profileImg"></div>
+          <div className="profileName">
+            Sema Bekdemir <button className="followBtn">· Follow</button>
+          </div>
+          <div className="info">
+            <p>
+              Published in <span>JavaScript in Plain English</span> · 4 min read
+              · May 14, 2024
+            </p>
+          </div>
+        </div>
+        <div className="comments">
+          <CommentsForm />
+        </div>
         <h2>{data.content}</h2>
-      </div>
-      <div className="comments">
-        <CommentsForm />
       </div>
     </div>
   );
