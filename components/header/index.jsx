@@ -2,6 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import "./header.css";
 import HeaderProfile from "./headerProfile";
+import NotificationsSvg from "../svgs/notifications";
 
 export default async function MainHeader() {
   const supabase = createClient();
@@ -25,7 +26,7 @@ export default async function MainHeader() {
           <Link href={"/new-post"}>Write</Link>
         </div>
         <div className="notifications">
-          <img src={"/img/notifications/notifications.svg"} alt="" />
+          <NotificationsSvg />
         </div>
         <div className="profile">
           <HeaderProfile />
