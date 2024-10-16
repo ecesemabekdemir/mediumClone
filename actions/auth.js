@@ -17,7 +17,8 @@ export async function signOut() {
   console.log("buraya geldi");
   const supabase = createClient();
   const { error } = await supabase.auth.signOut();
-  console.log(error);
+  revalidatePath("/", "layout");
+  redirect("/login");
 }
 
 export async function signUp(formData) {
