@@ -62,12 +62,8 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   margin: 20px auto;
   max-width: 800px;
-
-
-}
-
-.post {
   border-bottom: 1px solid gray;
+
 }
 
 .post h1 {
@@ -83,18 +79,21 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-.postList a {
-  text-decoration: none;
-  color: inherit;
+.postList  {
+  width: 700px;
+  margin: 0 auto;
+
+  .item {
+    border-bottom: 1px solid #f3f1f1;
+    padding: 15px 50px;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
-.postList div {
-  background-color: #ffffff;
-  border-radius: 8px;
 
-  padding: 20px;
-
-}
 
 
 

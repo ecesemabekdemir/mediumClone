@@ -24,7 +24,9 @@ export default async function MainHeader() {
         <div className="write">
           <Link href={"/new-post"}>Write</Link>
         </div>
-        <div className="notifications">#</div>
+        <div className="notifications">
+          <img src={"/img/notifications/notifications.svg"} alt="" />
+        </div>
         <div className="profile">
           <HeaderProfile />
         </div>

@@ -2,10 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
 import { createClient } from "@/utils/supabase/server";
 
-export async function login(formData) {
+export async function login(prevState, formData) {
   const supabase = createClient();
 
   // type-casting here for convenience
@@ -14,12 +13,12 @@ export async function login(formData) {
     email: formData.get("email"),
     password: formData.get("password"),
   };
-
+  let errors = {};
   const { error } = await supabase.auth.signInWithPassword(data);
 
   if (error) {
-    console.log(error);
-    return;
+    errors.message = "kullanıcı adı veya sifre yanlıs";
+    return { errors };
   }
 
   revalidatePath("/", "layout"); // server taraflı state yapıyor gibi.

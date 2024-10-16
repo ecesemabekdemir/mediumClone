@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
+import CommentsForm from "../../commentsform/commentsForm";
 
 export default async function PostDetailPage({ params }) {
   const supabase = createClient();
@@ -18,7 +19,9 @@ export default async function PostDetailPage({ params }) {
         <h1>{data.title}</h1>
         <h2>{data.content}</h2>
       </div>
-      <div className="comments"></div>
+      <div className="comments">
+        <CommentsForm />
+      </div>
     </div>
   );
 }

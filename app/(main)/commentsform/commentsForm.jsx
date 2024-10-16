@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useFormState } from "react-dom";
 import { commentSave } from "./action";
 
-export default function Comments({ id }) {
+export default function CommentsForm({ id }) {
   const [state, action] = useFormState(commentSave, {
-    mesagge: null,
+    message: null,
     error: null,
   });
 
@@ -14,7 +15,6 @@ export default function Comments({ id }) {
   useEffect(() => {
     if (state?.mesagge) {
       formRef.current.reset();
-      consolelog(state.mesagge);
     }
   }, [state]);
 
