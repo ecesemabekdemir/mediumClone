@@ -22,6 +22,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #f3f3f3;
 }
 
 /*
@@ -162,21 +163,21 @@ h6 {
 .footerContainer {
   margin-block: 40px;
 
-.footer {
-  margin: 20px;
-  border-top: 1px solid #e1dddd;
+  .footer {
+    margin: 20px;
+    border-top: 1px solid #e1dddd;
 
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 15px;
-    
-    li {
-      list-style: none;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 15px;
+
+      li {
+        list-style: none;
+      }
     }
   }
 }
 
 
-}

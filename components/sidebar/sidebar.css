@@ -1,6 +1,7 @@
 .sidenav {
   height: 100%;
-  width: 414px;
+  width: 300px;
+  padding: 25px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -9,5 +10,26 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  box-shadow: rgba(100, 100, 111, 0.2) -20px 0px 29px 6px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #156d12;
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+  }
+
+  .cancelBtn {
+    background-color: #fff;
+    color: black;
+  }
+}
+
+.content {
   box-shadow: rgba(100, 100, 111, 0.2) -20px 0px 29px 6px;
 }

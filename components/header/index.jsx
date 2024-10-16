@@ -16,7 +16,7 @@ export default async function MainHeader() {
     <header>
       <div className="left-header">
         <div className="logo">
-          <Link href={"/"}>Medium</Link>
+          <Link href={"/"}>Mediuum</Link>
         </div>
         <div className="search">
           <input type="text" placeholder="Search" />

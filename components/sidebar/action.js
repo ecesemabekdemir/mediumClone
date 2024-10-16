@@ -12,12 +12,12 @@ export async function commentSave(prevState, formData) {
   };
   // error yazı alanının boş kalmaması için
 
-  for (const key in errors) {
-    if (Object.prototype.hasOwnProperty.apply.call(errors, key)) {
-      const element = errors[key];
-      if (element) return { errors };
-    }
-  }
+  // for (const key in errors) {
+  //   if (Object.prototype.hasOwnProperty.apply.call(errors, key)) {
+  //     const element = errors[key];
+  //     if (element) return { errors };
+  //   }
+  // }  // furkan hocann derste yazdığı hata döndürme
 
   const supabase = createClient();
 
@@ -42,4 +42,6 @@ export async function commentSave(prevState, formData) {
     ]) // id karsılastırmaları yap
     .select()
     .single();
+
+  console.log(error);
 }
