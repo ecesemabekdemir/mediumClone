@@ -1,44 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import HeaderProfile from "./headerProfile";
+import { useState } from "react";
+import "./header.css";
+import { signOut } from "@/actions/auth";
 
-export default function Dropdown() {
+export default function Dropdown({ user }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeDropdown = (event) => {
-    if (!event.target.matches(".dropbtn")) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("click", closeDropdown);
-    return () => {
-      window.removeEventListener("click", closeDropdown);
-    };
-  }, []);
-
   return (
-    <div className="dropdown">
+    <>
       <button onClick={toggleDropdown} className="dropbtn">
-        Dropdown
+        {user?.email[0]}
       </button>
-      <div
-        id="myDropdown"
-        className={`dropdown-content ${isOpen ? "show" : ""}`}
-      >
-        <Link>Profile</Link>
-        <Link>Library</Link>
-        <Link>Stories</Link>
-        <Link>Stats</Link>
-        <HeaderProfile />
-      </div>
-    </div>
+      {isOpen && (
+        <div className="dropdown-menu">
+          <ul>
+            <li>
+              <Link href={"/"}>Profile</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Library</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Stories</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Stats</Link>
+            </li>
+            <li>
+              <form action={signOut}>
+                <button>Çıkış Yap</button>
+              </form>
+            </li>
+            <li>Hoşgeldin , {user?.email}</li>
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

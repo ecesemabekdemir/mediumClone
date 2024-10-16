@@ -1,8 +1,9 @@
+"use server";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import "./header.css";
-import HeaderProfile from "./headerProfile";
 import NotificationsSvg from "../svgs/notifications";
+import Dropdown from "./dropdown";
 
 export default async function MainHeader() {
   const supabase = createClient();
@@ -15,7 +16,7 @@ export default async function MainHeader() {
     <header>
       <div className="left-header">
         <div className="logo">
-          <h1>Medium</h1>
+          <Link href={"/"}>Medium</Link>
         </div>
         <div className="search">
           <input type="text" placeholder="Search" />
@@ -29,7 +30,7 @@ export default async function MainHeader() {
           <NotificationsSvg />
         </div>
         <div className="profile">
-          <HeaderProfile />
+          <Dropdown user={user} />
         </div>
       </div>
     </header>
