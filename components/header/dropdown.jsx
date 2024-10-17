@@ -34,10 +34,10 @@ export default function Dropdown({ user }) {
             </li>
             <li>
               <form action={signOut}>
-                <button>Çıkış Yap</button>
+                <button className="signoutBtn">Sign out</button>
               </form>
             </li>
-            <li>Hoşgeldin , {user?.email}</li>
+            <li>{user?.email} </li>
           </ul>
         </div>
       )}

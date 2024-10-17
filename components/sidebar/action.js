@@ -1,11 +1,12 @@
 "use server";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 export async function commentSave(prevState, formData) {
   const formObj = Object.fromEntries(formData); // formdatadan aldığım verileri obj cevir
   const content = formData.get("content");
-  const commentId = Number(formObj.commentId); //  number olmamlı karşşılaştırma yapabilmem için
+  const postId = Number(formObj.postId); //  number olmamlı karşşılaştırma yapabilmem için
+  console.log(content, postId);
 
   const errors = {
     content: !formObj.content && "yazı alanı boş olamaz",
@@ -37,11 +38,10 @@ export async function commentSave(prevState, formData) {
       {
         content,
         user_id: user.id,
-        post_id: commentId,
+        post_id: postId,
       },
     ]) // id karsılastırmaları yap
-    .select()
-    .single();
+    .select();
 
   console.log(error);
 }

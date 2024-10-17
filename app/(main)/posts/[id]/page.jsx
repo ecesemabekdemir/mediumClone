@@ -13,7 +13,6 @@ export default async function PostDetailPage({ params }) {
     .single();
 
   if (!data) return notFound();
-  console.log(data);
 
   return <ShowComments data={data} />;
 }
