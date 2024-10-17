@@ -79,6 +79,27 @@ h6 {
   border-radius: 8px;
   margin: 20px auto;
 
+  .buttons {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e1dddd;
+    .likes {
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    .commentBtn {
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
   h1 {
     font-size: 2.5rem;
     color: #333;
@@ -179,5 +200,3 @@ h6 {
     }
   }
 }
-
-

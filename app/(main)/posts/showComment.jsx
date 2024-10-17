@@ -1,6 +1,8 @@
 "use client";
 
 import Sidebar from "@/components/sidebar";
+import Clamp from "@/components/svgs/clamps";
+import CommentsIcon from "@/components/svgs/commenticon";
 import { useState } from "react";
 
 export default function ShowComments({ data }) {
@@ -27,11 +29,17 @@ export default function ShowComments({ data }) {
             </p>
           </div>
         </div>
-
-        <div className="comments">
-          <button className="commentBtn" onClick={toggleSidebar}>
-            Show Comments
-          </button>
+        <div className="buttons">
+          <div className="likes">
+            <button>
+              <Clamp />
+            </button>
+          </div>
+          <div className="commentBtn">
+            <button onClick={toggleSidebar}>
+              <CommentsIcon />
+            </button>
+          </div>
         </div>
 
         <h2>{data.content}</h2>

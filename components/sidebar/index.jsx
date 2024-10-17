@@ -59,7 +59,7 @@ export default function Sidebar({ dataId, toggleSidebar }) {
           {state?.errors?.content && <small>{state.errors.content}</small>}
         </label>
         <div className="btns">
-          <button className="cancelBtn">Cancel</button>
+          {/* <button className="cancelBtn">Cancel</button> */}
           <button type="submit">Respond</button>
         </div>
       </form>

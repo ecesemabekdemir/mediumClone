@@ -19,7 +19,7 @@ export default function Dropdown({ user }) {
       </button>
       {isOpen && (
         <div className="dropdown-menu">
-          <ul>
+          <ul className="dropdownTop">
             <li>
               <Link href={"/"}>Profile</Link>
             </li>
@@ -32,6 +32,22 @@ export default function Dropdown({ user }) {
             <li>
               <Link href={"/"}>Stats</Link>
             </li>
+          </ul>
+          <ul className="dropdownCenter">
+            <li>
+              <Link href={"/"}>Settings</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Refine recommendations</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Manage publications</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Help</Link>
+            </li>
+          </ul>
+          <ul>
             <li>
               <form action={signOut}>
                 <button className="signoutBtn">Sign out</button>
