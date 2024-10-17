@@ -37,7 +37,7 @@ export default function ShowComments({ data }) {
         <h2>{data.content}</h2>
       </div>
 
-      {open && <Sidebar dataId={data.id} />}
+      {open && <Sidebar dataId={data.id} toggleSidebar={toggleSidebar} />}
     </div>
   );
 }

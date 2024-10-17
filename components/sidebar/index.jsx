@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
 import { commentSave } from "./action";
 
-export default function Sidebar({ dataId }) {
+export default function Sidebar({ dataId, toggleSidebar }) {
   const [comment, setComment] = useState([]);
   const [state, action] = useFormState(commentSave, {
     message: null,
@@ -41,8 +41,13 @@ export default function Sidebar({ dataId }) {
 
   return (
     <div className="sidenav">
-      <h2>Responses({comment.length})</h2>
-      <form ref={formRef} action={action}>
+      <div className="sidenavHeader">
+        <h2>Responses({comment.length})</h2>
+        <button onClick={toggleSidebar} className="exitBtn">
+          X
+        </button>
+      </div>
+      <form className="formResponses" ref={formRef} action={action}>
         <label className="content">
           <textarea
             className=""
@@ -53,15 +58,33 @@ export default function Sidebar({ dataId }) {
           <input type="hidden" name="postId" value={dataId} />
           {state?.errors?.content && <small>{state.errors.content}</small>}
         </label>
-        <button className="cancelBtn">Cancel</button>
-        <button type="submit">Respond</button>
+        <div className="btns">
+          <button className="cancelBtn">Cancel</button>
+          <button type="submit">Respond</button>
+        </div>
       </form>
-      <div className="comments">
-        {comment?.map((x) => (
-          <p key={x.id}>
-            {x.content} {x.firstName}
-          </p>
-        ))}
+      <div className="also">
+        <input name="check" type="checkbox" />
+        <label htmlFor="check">Also Publis to my profile</label>
+      </div>
+
+      <div className="commentsContainer">
+        <div className="comments">
+          {comment?.map((x) => (
+            <>
+              <div className="commentUser">
+                <div className="profilePic"></div>
+                <div className="item">
+                  <div className="userName">sema bekdemir</div>
+                  <div className="date">4 months ago</div>
+                </div>
+              </div>
+              <div className="comment">
+                <p key={x.id}> {x.content}</p>
+              </div>
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );
