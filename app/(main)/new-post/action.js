@@ -11,8 +11,6 @@ export async function SavePost(formData) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  console.log(user);
-
   const { data, error } = await supabase
     .from("posts")
     .insert({ title, content, user_id: user.id })
@@ -21,7 +19,7 @@ export async function SavePost(formData) {
   // data dizi döndüğü için single ile tekil dönmesini sağlıyoruz.
 
   if (error) {
-    console.log(error);
+    // console.log(error);
   }
 
   redirect(`/posts/${data.id}`);

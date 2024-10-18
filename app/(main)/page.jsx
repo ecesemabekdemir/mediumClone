@@ -5,8 +5,6 @@ export default async function Home() {
   const supabase = createClient();
   let { data: posts } = await supabase.from("posts").select("*");
 
-  console.log(posts);
-
   return (
     <div className="postList">
       {posts

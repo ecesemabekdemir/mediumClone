@@ -91,6 +91,14 @@ h6 {
       }
     }
 
+    .favoriBtn {
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
     .commentBtn {
       button {
         background: none;
@@ -200,3 +208,12 @@ h6 {
     }
   }
 }
+
+
+
+.clampsvg {
+  margin-bottom: 25px;
+}.select  {
+  fill: #DA7676;
+}
+
