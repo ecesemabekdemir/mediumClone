@@ -13,7 +13,12 @@ export async function SavePost(formData) {
 
   const { data, error } = await supabase
     .from("posts")
-    .insert({ title, content, user_id: user.id })
+    .insert({
+      title,
+      content,
+      user_id: user.id,
+      full_name: `${user.user_metadata.firstName} ${user.user_metadata.lastName}`,
+    })
     .select()
     .single();
   // data dizi döndüğü için single ile tekil dönmesini sağlıyoruz.

@@ -21,12 +21,13 @@ export default function PostDetail({ data, post_id }) {
         <div className="userInfo">
           <div className="profileImg"></div>
           <div className="profileName">
-            Sema Bekdemir <button className="followBtn">· Follow</button>
+            {data.full_name}
+            <button className="followBtn">· Follow</button>
           </div>
           <div className="info">
             <p>
-              Published in <span>JavaScript in Plain English</span> · 4 min read
-              · May 14, 2024
+              Published in <span>JavaScript in Plain English</span>·
+              {new Date(data.created_at).toLocaleDateString()}
             </p>
           </div>
         </div>

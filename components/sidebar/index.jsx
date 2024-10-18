@@ -75,7 +75,7 @@ export default function Sidebar({ dataId, toggleSidebar }) {
               <div className="commentUser">
                 <div className="profilePic"></div>
                 <div className="item">
-                  <div className="userName">sema bekdemir</div>
+                  <div className="userName">{x.full_name}</div>
                   <div className="date">4 months ago</div>
                 </div>
               </div>

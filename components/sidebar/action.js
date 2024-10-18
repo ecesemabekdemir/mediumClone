@@ -39,6 +39,7 @@ export async function commentSave(prevState, formData) {
         content,
         user_id: user.id,
         post_id: postId,
+        full_name: `${user.user_metadata.firstName} ${user.user_metadata.lastName}`,
       },
     ]) // id karsılastırmaları yap
     .select();
