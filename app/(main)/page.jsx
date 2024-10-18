@@ -9,8 +9,8 @@ export default async function Home() {
     <div className="postList">
       {posts
         ? posts.map((x, i) => (
-            <Link href={`/posts/${x.id}`}>
-              <div className="item" key={i}>
+            <Link key={i} href={`/posts/${x.id}`}>
+              <div className="item">
                 <h1>{x.title}</h1>
                 <p>{x.content}</p>
                 <div className="commentList"></div>

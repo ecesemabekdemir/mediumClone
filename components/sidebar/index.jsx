@@ -71,7 +71,7 @@ export default function Sidebar({ dataId, toggleSidebar }) {
       <div className="commentsContainer">
         <div className="comments">
           {comment?.map((x) => (
-            <>
+            <div key={x.id}>
               <div className="commentUser">
                 <div className="profilePic"></div>
                 <div className="item">
@@ -80,9 +80,9 @@ export default function Sidebar({ dataId, toggleSidebar }) {
                 </div>
               </div>
               <div className="comment">
-                <p key={x.id}> {x.content}</p>
+                <p> {x.content}</p>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>
