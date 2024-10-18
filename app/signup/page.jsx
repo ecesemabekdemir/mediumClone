@@ -1,7 +1,7 @@
 import { signUp } from "@/actions/auth";
 import "./signup.css";
 
-export default function SignUPPage() {
+export default function SignupPage() {
   return (
     <div className="signupCont">
       <div className="signup">

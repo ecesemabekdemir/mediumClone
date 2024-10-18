@@ -1,5 +1,6 @@
 "use client";
-import { login, signup } from "./action";
+import Link from "next/link";
+import { login } from "./action";
 import "./login.css";
 import LoginSvg from "@/components/svgs/Loginsvg";
 import { useFormState } from "react-dom";
@@ -19,7 +20,9 @@ export default function LoginPage() {
         <input type="password" name="password" placeholder="********" />
         <button>Login</button>
         <div className="signup">
-          <h3>Already have an account?</h3>
+          <h3>
+            Already have an account? <Link href={"/signup"}>Signup</Link>
+          </h3>
         </div>
       </form>
     </div>
